@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtoZ Toys - Curated Kids Toys & Pinterest Gift Guides</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandTeal: '#00897B',
+                        brandTealDark: '#00695C',
+                        brandCoral: '#FF7043',
+                        brandCoralDark: '#E64A19',
+                        brandYellow: '#FFC107',
+                        brandYellowLight: '#FFF8E1',
+                        skyBlue: '#E0F7FA',
+                        milkCream: '#FFFDE7',
+                    },
+                    fontFamily: {
+                        heading: ['Fredoka', 'sans-serif'],
+                        body: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FFFDE7;
+            background-image: 
+                radial-gradient(#00897B 0.75px, transparent 0.75px), 
+                radial-gradient(#FF7043 0.75px, #FFFDE7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        h1, h2, h3, .font-heading {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Floating background shapes animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+
+        @keyframes bounceSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6deg); }
+        }
+
+        .animate-float {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 6s ease-in-out 2s infinite;
+        }
+
+        .animate-bounce-slow {
+            animation: bounceSlow 3s ease-in-out infinite;
+        }
+
+        /* Soft glassmorphism cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border: 3px solid #FFFFFF;
+        }
+    </style>
+</head>
+<body class="text-stone-800 min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-brandCoral selection:text-white">
+
+    <!-- Playful Decorative Floating Elements (Background) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <!-- Floating Cloud Top Left -->
+        <div class="absolute top-8 left-4 md:left-12 opacity-80 animate-float">
+            <svg class="w-20 h-20 text-skyBlue" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+            </svg>
+        </div>
+
+        <!-- Floating Star Top Right -->
+        <div class="absolute top-12 right-6 md:right-16 opacity-80 animate-float-delayed">
+            <i class="fa-solid fa-star text-4xl text-brandYellow drop-shadow-sm"></i>
+        </div>
+
+        <!-- Toy Block Left Middle -->
+        <div class="absolute top-1/2 left-3 md:left-10 opacity-70 animate-float hidden sm:block">
+            <div class="w-12 h-12 rounded-2xl bg-brandCoral/20 border-2 border-brandCoral flex items-center justify-center font-heading font-bold text-brandCoral text-xl">
+                A
+            </div>
+        </div>
+
+        <!-- Toy Block Right Middle -->
+        <div class="absolute top-2/3 right-4 md:right-12 opacity-70 animate-float-delayed hidden sm:block">
+            <div class="w-12 h-12 rounded-2xl bg-brandTeal/20 border-2 border-brandTeal flex items-center justify-center font-heading font-bold text-brandTeal text-xl">
+                Z
+            </div>
+        </div>
+
+        <!-- Floating Cloud Bottom Right -->
+        <div class="absolute bottom-20 right-8 opacity-80 animate-float">
+            <svg class="w-24 h-24 text-skyBlue" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Top Announcement Bar -->
+    <div class="relative z-10 bg-gradient-to-r from-brandTeal via-brandTealDark to-brandTeal text-white text-xs sm:text-sm text-center py-2.5 px-4 font-bold shadow-sm flex items-center justify-center gap-2">
+        <span class="bg-brandYellow text-stone-900 text-[10px] uppercase font-bold px-2 py-0.5 rounded-full animate-pulse">Official Hub</span>
+        <span>Welcome to AtoZ Toys Pinterest Gift Guide! 🧸</span>
+    </div>
+
+    <main class="relative z-10 max-w-2xl mx-auto px-4 py-8 sm:py-12 w-full flex-1 flex flex-col items-center">
+
+        <!-- Logo Block (Concept 3 Bear Design Embedded SVG) -->
+        <div class="flex flex-col items-center text-center mb-6 group">
+            <div class="relative mb-3">
+                <!-- Glowing Backdrop Ring -->
+                <div class="absolute -inset-2 bg-gradient-to-r from-brandCoral via-brandYellow to-brandTeal rounded-3xl blur-md opacity-70 group-hover:opacity-100 transition duration-500"></div>
+                
+                <!-- Bear Logo Container -->
+                <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-white border-4 border-white shadow-xl flex items-center justify-center p-3">
+                    <svg viewBox="0 0 200 200" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Bear Head & Ears -->
+                        <circle cx="65" cy="55" r="18" fill="#00897B"/>
+                        <circle cx="135" cy="55" r="18" fill="#00897B"/>
+                        <circle cx="65" cy="55" r="10" fill="#E0F7FA"/>
+                        <circle cx="135" cy="55" r="10" fill="#E0F7FA"/>
+                        
+                        <!-- Bear Body Outer Outline -->
+                        <path d="M 50 140 Q 50 70 100 70 Q 150 70 150 140 Q 150 165 125 165 C 100 165 100 165 75 165 Q 50 165 50 140 Z" fill="#00897B"/>
+                        
+                        <!-- Ribbon Swoosh across body -->
+                        <path d="M 40 120 Q 100 80 160 115 Q 140 145 40 120 Z" fill="#FF7043"/>
+                        
+                        <!-- Text inside ribbon -->
+                        <text x="100" y="122" font-family="Fredoka, sans-serif" font-weight="700" font-size="22" fill="#FFFFFF" text-anchor="middle">AtoZ</text>
+                        
+                        <!-- Muzzle & Nose -->
+                        <ellipse cx="100" cy="88" rx="14" ry="10" fill="#FFFFFF"/>
+                        <polygon points="100,82 94,88 106,88" fill="#00695C"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Brand Title and Tagline -->
+            <h1 class="font-heading text-3xl sm:text-4xl font-bold text-stone-900 tracking-tight flex items-center gap-2">
+                AtoZ Toys
+                <i class="fa-solid fa-circle-check text-brandTeal text-xl" title="Verified Store Guide"></i>
+            </h1>
+            <p class="mt-2 text-stone-600 text-sm sm:text-base font-semibold max-w-md leading-relaxed">
+                Discover Top-Rated Amazon Toys, Learning Games & Kids Gift Ideas from A to Z! 🎁✨
+            </p>
+        </div>
+
+        <!-- Primary Action Button: Main Pinterest Profile Link -->
+        <div class="w-full mb-6">
+            <a href="https://ca.pinterest.com/pbhavsar0904/?actingBusinessId=490259246844356503" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               class="group relative w-full p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-red-600 via-red-500 to-brandCoral text-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-between border-2 border-red-400 overflow-hidden">
+                
+                <!-- Shimmer Effect -->
+                <div class="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-12 -translate-x-full group-hover:translate-x-[300%] transition-transform duration-1000"></div>
+
+                <div class="flex items-center gap-3 sm:gap-4 relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-white text-red-600 flex items-center justify-center text-2xl shadow-inner shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-pinterest-p"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block font-heading text-lg sm:text-xl font-bold leading-tight">Visit Our Pinterest Boards</span>
+                        <span class="block text-xs sm:text-sm text-red-100 font-medium">Explore daily curated toy pins & gift guides</span>
+                    </div>
+                </div>
+
+                <div class="relative z-10 w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:translate-x-1 transition-transform">
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- What AtoZ Toys Is (General Store Information Card) -->
+        <div class="w-full glass-card rounded-3xl p-6 shadow-md mb-6 relative overflow-hidden">
+            <div class="flex items-center gap-2 mb-3">
+                <span class="w-8 h-8 rounded-lg bg-brandYellowLight text-brandYellow border border-amber-200 flex items-center justify-center font-bold text-sm">
+                    <i class="fa-solid fa-shapes"></i>
+                </span>
+                <h2 class="font-heading text-xl font-bold text-stone-800">What is AtoZ Toys?</h2>
+            </div>
+            
+            <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4">
+                <strong>AtoZ Toys</strong> is your ultimate curated Pinterest guide for finding high-quality, top-reviewed toys on Amazon. We help parents, grandparents, relatives, and gift-seekers navigate thousands of options to find the safest, most creative, and fun play items for kids of all ages.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 text-xs font-bold text-stone-700">
+                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-skyBlue/50 border border-skyBlue">
+                    <i class="fa-solid fa-cubes text-brandTeal"></i>
+                    <span>Montessori Toys</span>
+                </div>
+                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-brandYellowLight border border-amber-200">
+                    <i class="fa-solid fa-brain text-amber-600"></i>
+                    <span>STEM & Learning</span>
+                </div>
+                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-pink-50 border border-pink-100">
+                    <i class="fa-solid fa-gift text-brandCoral"></i>
+                    <span>Birthday Gift Guides</span>
+                </div>
+                <div class="flex items-center gap-2 p-2.5 rounded-xl bg-emerald-50 border border-emerald-100">
+                    <i class="fa-solid fa-shield-cat text-emerald-600"></i>
+                    <span>Amazon Top-Rated</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Pinterest Gift Guide Categories -->
+        <div class="w-full mb-6">
+            <h3 class="font-heading text-lg font-bold text-stone-800 mb-3 px-1 flex items-center gap-2">
+                <i class="fa-solid fa-fire text-brandCoral"></i>
+                <span>Explore Popular Board Categories</span>
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Category 1 -->
+                <a href="https://ca.pinterest.com/pbhavsar0904/?actingBusinessId=490259246844356503" 
+                   target="_blank"
+                   class="glass-card p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-brandTeal/40 transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brandTeal/10 text-brandTeal flex items-center justify-center font-bold text-lg">
+                            🧸
+                        </div>
+                        <div class="text-left">
+                            <span class="block font-heading text-sm font-bold text-stone-800 group-hover:text-brandTeal transition-colors">Toddler & Wooden Toys</span>
+                            <span class="block text-[11px] text-stone-500 font-medium">Ages 0-3 • Safe & Natural</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-stone-400 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+
+                <!-- Category 2 -->
+                <a href="https://ca.pinterest.com/pbhavsar0904/?actingBusinessId=490259246844356503" 
+                   target="_blank"
+                   class="glass-card p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-brandCoral/40 transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-brandCoral/10 text-brandCoral flex items-center justify-center font-bold text-lg">
+                            🚀
+                        </div>
+                        <div class="text-left">
+                            <span class="block font-heading text-sm font-bold text-stone-800 group-hover:text-brandCoral transition-colors">STEM & Creative Games</span>
+                            <span class="block text-[11px] text-stone-500 font-medium">Building, Logic & Science</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-stone-400 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="https://ca.pinterest.com/pbhavsar0904/?actingBusinessId=490259246844356503" 
+                   target="_blank"
+                   class="glass-card p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-amber-400/40 transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-lg">
+                            🎁
+                        </div>
+                        <div class="text-left">
+                            <span class="block font-heading text-sm font-bold text-stone-800 group-hover:text-amber-600 transition-colors">Trending Amazon Finds</span>
+                            <span class="block text-[11px] text-stone-500 font-medium">Viral Toys & Holiday Wishlists</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-stone-400 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="https://ca.pinterest.com/pbhavsar0904/?actingBusinessId=490259246844356503" 
+                   target="_blank"
+                   class="glass-card p-4 rounded-2xl shadow-sm hover:shadow-md hover:border-sky-400/40 transition-all flex items-center justify-between group">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center font-bold text-lg">
+                            🧩
+                        </div>
+                        <div class="text-left">
+                            <span class="block font-heading text-sm font-bold text-stone-800 group-hover:text-sky-600 transition-colors">Family Board Games</span>
+                            <span class="block text-[11px] text-stone-500 font-medium">Interactive Night Fun</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right text-xs text-stone-400 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Instagram Placeholder Card (Reserved for Future Account) -->
+        <div class="w-full glass-card rounded-3xl p-5 shadow-sm mb-6 border-2 border-dashed border-pink-300 bg-gradient-to-r from-pink-50/60 via-purple-50/60 to-orange-50/60">
+            <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 text-white flex items-center justify-center text-xl shadow-sm shrink-0">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <div class="text-left">
+                        <div class="flex items-center gap-2">
+                            <span class="font-heading text-base font-bold text-stone-800">Instagram Community</span>
+                            <span class="bg-pink-100 text-pink-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Coming Soon</span>
+                        </div>
+                        <p class="text-xs text-stone-500 mt-0.5">
+                            Daily toy unboxings, reels, and exclusive giveaways launching soon!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secondary Utility Buttons -->
+        <div class="w-full flex items-center justify-center gap-3">
+            <button onclick="copyPinterestLink()" 
+                    class="px-5 py-2.5 rounded-2xl bg-white hover:bg-stone-50 border-2 border-stone-200 text-stone-700 font-heading text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2 hover:scale-105">
+                <i class="fa-solid fa-copy text-brandCoral"></i>
+                <span>Copy Pinterest Link</span>
+            </button>
+            <a href="https://ca.pinterest.com/pbhavsar0904/?actingBusinessId=490259246844356503" 
+               target="_blank" 
+               class="px-5 py-2.5 rounded-2xl bg-brandTeal hover:bg-brandTealDark text-white font-heading text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2 hover:scale-105">
+                <i class="fa-solid fa-heart"></i>
+                <span>Follow on Pinterest</span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Compliant Amazon Associate Disclosure Footer -->
+    <footer class="relative z-10 bg-white/90 backdrop-blur-md border-t border-stone-200/80 mt-12 py-8 px-4 text-center">
+        <div class="max-w-xl mx-auto space-y-3">
+            <div class="flex items-center justify-center gap-2 text-stone-700 font-heading text-sm font-bold">
+                <i class="fa-solid fa-bear-face text-brandTeal"></i>
+                <span>AtoZ Toys Curated Guide</span>
+            </div>
+            
+            <p class="text-[11px] text-stone-500 leading-relaxed">
+                <strong>Amazon Associate Disclosure:</strong> AtoZ Toys is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
+            </p>
+
+            <p class="text-[10px] text-stone-400">
+                &copy; 2026 AtoZ Toys. All product logos and brand names are trademarks of their respective owners on Amazon.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification for Link Copy -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-stone-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toastMsg" class="text-xs font-bold">Copied to clipboard!</span>
+    </div>
+
+    <script>
+        const PINTEREST_URL = "https://ca.pinterest.com/pbhavsar0904/?actingBusinessId=490259246844356503";
+
+        function copyPinterestLink() {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(PINTEREST_URL).then(() => {
+                    showToast("Pinterest profile link copied to clipboard!");
+                }).catch(() => {
+                    fallbackCopy();
+                });
+            } else {
+                fallbackCopy();
+            }
+        }
+
+        function fallbackCopy() {
+            const textArea = document.createElement("textarea");
+            textArea.value = PINTEREST_URL;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showToast("Pinterest profile link copied to clipboard!");
+            } catch (err) {
+                showToast("Failed to copy link.");
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            
+            toastMsg.innerText = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

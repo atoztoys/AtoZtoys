@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A to Z Toys – Top-Reviewed Toy Finds on Amazon</title>
+<meta name="description" content="Skip the search. Handpicked, top-reviewed, safe and creative toys on Amazon for all ages – the ultimate gift guide.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A to Z Toys – The Ultimate Toy Gift Guide">
+<meta property="og:description" content="Skip the search, find the best toys on Amazon. Top-reviewed, safe & creative, all ages.">
+<meta property="og:image" content="https://pbhavsar0904.github.io/AtoZtoys/images/logo-square.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/logo-square.png">
+<link rel="apple-touch-icon" href="images/logo-square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#00897B; --teal-dark:#00695C; --teal-light:#E0F2F1;
+    --coral:#FF7043; --coral-dark:#F4511E;
+    --cream:#FFFDF9; --bg:#FAF8F5; --ink:#2b2b2b; --muted:#6b6b66; --line:#ece7df;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Quicksand',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brand-name{font-family:'Fredoka',system-ui,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  .notice{background:var(--teal);color:#fff;font-size:.85rem;font-weight:600;text-align:center;padding:8px 16px}
+
+  header{background:#FBF7EB;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:88px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:68px;width:auto;display:block}
+  .ig-btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;padding:9px 16px;border-radius:999px;transition:.2s}
+  .ig-btn:hover{background:var(--teal-dark)}
+  .ig-btn svg{width:18px;height:18px}
+
+  .hero{text-align:center;padding:48px 0 28px;background:linear-gradient(180deg,var(--teal-light) 0%,transparent 100%)}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.1;color:var(--teal-dark);max-width:760px;margin:0 auto}
+  .hero p{max-width:600px;margin:14px auto 0;color:var(--muted);font-size:1.05rem;font-weight:600}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+  .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:700;color:var(--teal-dark)}
+  .disclosure-top{max-width:640px;margin:18px auto 0;font-size:.78rem;color:var(--muted)}
+
+  .section-title{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 18px}
+  .section-title h2{font-size:1.6rem;color:var(--ink)}
+  .section-title span{font-size:.85rem;color:var(--muted);font-weight:600}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin-bottom:30px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.09)}
+  .photo{position:relative;aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px}
+  .photo img{width:100%;height:100%;object-fit:contain}
+  .tag{position:absolute;top:12px;left:12px;background:var(--coral);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .cat{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+  .body h3{font-size:1.15rem;line-height:1.25;margin:4px 0 8px}
+  .body p{font-size:.9rem;color:var(--muted);flex:1}
+  .feats{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+  .feats li{background:var(--teal-light);color:var(--teal-dark);font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:8px}
+  .buy{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--coral);color:#fff;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;padding:12px;border-radius:14px;transition:.2s}
+  .buy:hover{background:var(--coral-dark);transform:translateY(-1px)}
+  .buy svg{width:14px;height:14px}
+
+  .more{text-align:center;background:#fff;border:2px dashed #d8d2c7;border-radius:22px;padding:30px 20px;margin:10px 0 40px}
+  .more h3{font-size:1.25rem;color:var(--teal-dark)}
+  .more p{color:var(--muted);margin:6px 0 16px;font-weight:600}
+
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:40px}
+  .why div{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .why h4{font-family:'Fredoka',sans-serif;font-size:1.05rem;color:var(--teal-dark);margin-bottom:4px}
+  .why p{font-size:.88rem;color:var(--muted)}
+
+  footer{background:#1f2b29;color:#c9d4d1;padding:34px 0;text-align:center;font-size:.8rem}
+  footer .brand-name{color:#fff;font-size:1.3rem}
+  footer p{max-width:680px;margin:10px auto 0;color:#9fb0ac}
+  footer a.ig{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+  @media(max-width:520px){.nav{height:76px}.brand img{height:58px}.ig-btn span{display:none}.ig-btn{padding:10px}}
+</style>
+</head>
+<body>
+
+<div class="notice">As an Amazon Associate we earn from qualifying purchases. Buttons below open the product on Amazon.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand" aria-label="A to Z Toys home">
+      <img src="images/logo.png" alt="A to Z Toys logo" width="402" height="596">
+    </a>
+    <a class="ig-btn" href="https://www.instagram.com/atoztoysforchild" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      <span>Follow @atoztoysforchild</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Skip the search. Find the best toys on Amazon.</h1>
+    <p>Top-reviewed, safe and creative picks for all ages. The ultimate gift guide, one tap from Instagram to Amazon.</p>
+    <div class="pills">
+      <span class="pill">⭐ Top-reviewed</span>
+      <span class="pill">🛡️ Safe &amp; creative</span>
+      <span class="pill">🎁 Gift-ready ideas</span>
+      <span class="pill">👶 All ages</span>
+    </div>
+    <p class="disclosure-top">Prices, availability and age guidance change on Amazon, so always check the listing before you buy.</p>
+  </div>
+</section>
+
+<main class="wrap" id="toys">
+  <div class="section-title">
+    <h2>Latest finds</h2>
+    <span id="count"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+
+  <div class="more">
+    <h3>More toys coming soon 🧸</h3>
+    <p>New picks land on Instagram first. Follow along so you never miss a find.</p>
+    <a class="ig-btn" href="https://www.instagram.com/atoztoysforchild" target="_blank" rel="noopener">Follow on Instagram</a>
+  </div>
+
+  <div class="why">
+    <div><h4>Handpicked</h4><p>We look for well-reviewed toys so you don't have to scroll through endless listings.</p></div>
+    <div><h4>Safe &amp; creative</h4><p>Toys that encourage curiosity, sensory exploration and imaginative play.</p></div>
+    <div><h4>Straight to Amazon</h4><p>Every button takes you directly to the product page to check details and buy.</p></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand-name">AtoZ Toys</span>
+    <p>Questions or toy requests? Send us a message on <a class="ig" href="https://www.instagram.com/atoztoysforchild" target="_blank" rel="noopener">Instagram @atoztoysforchild</a>.</p>
+    <p><strong>Amazon Associate Disclosure:</strong> A to Z Toys is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate we earn from qualifying purchases.</p>
+    <p>Always check the Amazon listing for age recommendations, safety warnings and supervision guidance. All product names and trademarks belong to their respective owners.</p>
+    <p>© 2026 A to Z Toys</p>
+  </div>
+</footer>
+
+<script>
+/* ============ ADD OR EDIT TOYS HERE ============
+   Newest toy first. Copy a block to add a product.
+   - image: file inside the /images folder
+   - url:   your Amazon affiliate link for that toy                       */
+const toys = [
+  {
+    name: "Sensory Activity Cube for Babies",
+    category: "Sensory",
+    tag: "New",
+    image: "images/sensory-cube.jpg",
+    alt: "White and cream sensory activity cube with spinner, mirror, sliders, dial and buttons",
+    desc: "A soft-edged activity cube with something to do on every side: a spinner, mirror, sliders, buttons, a turning dial and little latches for curious hands.",
+    features: ["Spinner & dial", "Mirror", "Sliders & buttons"],
+    url: "https://link.amazon/B09Eyim9v"
+  },
+  {
+    name: "Light-Up Farm Wooden Busy Board",
+    category: "Busy boards",
+    tag: "New",
+    image: "images/light-up-farm-busy-board.jpg",
+    alt: "Wooden farm-themed busy board with colorful LED lights, switches, knobs and a key",
+    desc: "A wooden farm-themed board packed with colorful LED lights, switches, knobs and a key to turn, ideal for little ones who love flipping and twisting everything.",
+    features: ["LED lights", "Switches & knobs", "Farm theme"],
+    url: "https://link.amazon/B0hq0DdKj"
+  },
+  {
+    name: "Silicone Stacking Rings & Teether Toy",
+    category: "Baby & stacking",
+    tag: "New",
+    image: "images/silicone-stacking-rings.jpg",
+    alt: "Stack of soft muted-color silicone rings with a sun-shaped teether on top",
+    desc: "Soft silicone rings in calm, muted colors with different shapes and textures to stack, grab and explore, topped with a sun-shaped ring.",
+    features: ["Soft silicone", "Stacking play", "Calm colors"],
+    url: "https://link.amazon/B01HQijb0"
+  },
+  {
+    name: "Plush Farm Barn Set with Animals",
+    category: "Plush & pretend",
+    tag: "New",
+    image: "images/plush-farm-barn-set.jpg",
+    alt: "Red and blue plush barn with a mirror and soft farm animals",
+    desc: "A cuddly plush barn with a carry handle, a mirror, numbers 1–10 and a team of soft farm animals to tuck in, hide and find.",
+    features: ["Carry handle", "Mirror & numbers", "Soft animals"],
+    url: "https://link.amazon/B0c5s4CPn"
+  }
+];
+
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.getElementById('grid').innerHTML = toys.map(t => `
+  <article class="card">
+    <div class="photo">
+      ${t.tag ? `<span class="tag">${esc(t.tag)}</span>` : ''}
+      <img src="${esc(t.image)}" alt="${esc(t.alt)}" loading="lazy">
+    </div>
+    <div class="body">
+      <span class="cat">${esc(t.category)}</span>
+      <h3>${esc(t.name)}</h3>
+      <p>${esc(t.desc)}</p>
+      <ul class="feats">${t.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>
+      <a class="buy" href="${esc(t.url)}" target="_blank" rel="noopener noreferrer sponsored">View on Amazon ${arrow}</a>
+    </div>
+  </article>`).join('');
+document.getElementById('count').textContent = toys.length + ' toys';
+</script>
+</body>
+</html>

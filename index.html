@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A to Z Toys – Top-Reviewed Toy Finds on Amazon</title>
+<meta name="description" content="Skip the search. Handpicked, top-reviewed, safe and creative toys on Amazon for all ages – the ultimate gift guide.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A to Z Toys – The Ultimate Toy Gift Guide">
+<meta property="og:description" content="Skip the search, find the best toys on Amazon. Top-reviewed, safe & creative, all ages.">
+<meta property="og:image" content="https://pbhavsar0904.github.io/AtoZtoys/images/logo-square.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/logo-square.png">
+<link rel="apple-touch-icon" href="images/logo-square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#00897B; --teal-dark:#00695C; --teal-light:#E0F2F1;
+    --coral:#FF7043; --coral-dark:#F4511E;
+    --cream:#FFFDF9; --bg:#FAF8F5; --ink:#2b2b2b; --muted:#6b6b66; --line:#ece7df;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Quicksand',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brand-name{font-family:'Fredoka',system-ui,sans-serif}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  .notice{background:var(--teal);color:#fff;font-size:.85rem;font-weight:600;text-align:center;padding:8px 16px}
+
+  header{background:#FBF7EB;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:88px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand img{height:68px;width:auto;display:block}
+  .ig-btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;padding:9px 16px;border-radius:999px;transition:.2s}
+  .ig-btn:hover{background:var(--teal-dark)}
+  .ig-btn svg{width:18px;height:18px}
+
+  .hero{text-align:center;padding:48px 0 28px;background:linear-gradient(180deg,var(--teal-light) 0%,transparent 100%)}
+  .hero h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.1;color:var(--teal-dark);max-width:760px;margin:0 auto}
+  .hero p{max-width:600px;margin:14px auto 0;color:var(--muted);font-size:1.05rem;font-weight:600}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+  .pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:700;color:var(--teal-dark)}
+  .disclosure-top{max-width:640px;margin:18px auto 0;font-size:.78rem;color:var(--muted)}
+
+  .section-title{display:flex;align-items:baseline;justify-content:space-between;margin:34px 0 18px}
+  .section-title h2{font-size:1.6rem;color:var(--ink)}
+  .section-title span{font-size:.85rem;color:var(--muted);font-weight:600}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin-bottom:30px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .25s,box-shadow .25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.09)}
+  .photo{position:relative;aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px}
+  .photo img{width:100%;height:100%;object-fit:contain}
+  .tag{position:absolute;top:12px;left:12px;background:var(--coral);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+  .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .cat{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+  .body h3{font-size:1.15rem;line-height:1.25;margin:4px 0 8px}
+  .body p{font-size:.9rem;color:var(--muted);flex:1}
+  .feats{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+  .feats li{background:var(--teal-light);color:var(--teal-dark);font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:8px}
+  .buy{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--coral);color:#fff;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em;padding:12px;border-radius:14px;transition:.2s}
+  .buy:hover{background:var(--coral-dark);transform:translateY(-1px)}
+  .buy svg{width:14px;height:14px}
+
+  .more{text-align:center;background:#fff;border:2px dashed #d8d2c7;border-radius:22px;padding:30px 20px;margin:10px 0 40px}
+  .more h3{font-size:1.25rem;color:var(--teal-dark)}
+  .more p{color:var(--muted);margin:6px 0 16px;font-weight:600}
+
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:40px}
+  .why div{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:20px}
+  .why h4{font-family:'Fredoka',sans-serif;font-size:1.05rem;color:var(--teal-dark);margin-bottom:4px}
+  .why p{font-size:.88rem;color:var(--muted)}
+
+  footer{background:#1f2b29;color:#c9d4d1;padding:34px 0;text-align:center;font-size:.8rem}
+  footer .brand-name{color:#fff;font-size:1.3rem}
+  footer p{max-width:680px;margin:10px auto 0;color:#9fb0ac}
+  footer a.ig{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+  .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  .chips-label{width:100%;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .chip{background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;padding:9px 16px;border-radius:999px;transition:.2s}
+  .chip:hover{background:var(--coral);transform:translateY(-1px)}
+  .chip.alt{background:#fff;color:var(--teal-dark);border:1px solid var(--line)}
+  .chip.alt:hover{background:var(--coral);color:#fff}
+  section.cat-sec{scroll-margin-top:100px;margin-bottom:18px}
+  .section-title p{font-size:.85rem;color:var(--muted);font-weight:600;margin-top:2px}
+  .section-title{align-items:flex-end;gap:12px;flex-wrap:wrap}
+  .age-badge{display:inline-block;background:var(--coral);color:#fff;font-family:'Fredoka',sans-serif;font-size:.8rem;padding:3px 12px;border-radius:999px;margin-right:8px;vertical-align:middle}
+  .soon{grid-column:1/-1;text-align:center;background:#fff;border:2px dashed #d8d2c7;border-radius:22px;padding:34px 20px}
+  .soon h3{font-size:1.25rem;color:var(--teal-dark)}
+  .soon p{color:var(--muted);margin:6px 0 16px;font-weight:600}
+  .divider{height:1px;background:var(--line);margin:30px 0 6px}
+  .arrows{display:flex;gap:8px}
+  .arrows[hidden]{display:none}
+  .arrow{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--teal-dark);font-size:1.4rem;line-height:1;cursor:pointer;display:grid;place-items:center;transition:.2s;font-family:inherit}
+  .arrow:hover:not(:disabled){background:var(--teal);color:#fff;border-color:var(--teal)}
+  .arrow:disabled{opacity:.35;cursor:default}
+  .title-right{display:flex;align-items:center;gap:14px}
+  .title-right .count{font-size:.85rem;color:var(--muted);font-weight:600}
+  .track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 20px;margin:0 -2px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#cfc8bb transparent}
+  .track::-webkit-scrollbar{height:8px}
+  .track::-webkit-scrollbar-thumb{background:#cfc8bb;border-radius:8px}
+  .track .card{flex:0 0 calc((100% - 66px)/4);min-width:240px;scroll-snap-align:start}
+  @media(max-width:980px){.track .card{flex-basis:calc((100% - 22px)/2.2)}}
+  @media(max-width:560px){.track .card{flex-basis:78%;min-width:0}}
+  @media(max-width:520px){.nav{height:76px}.brand img{height:58px}.ig-btn span{display:none}.ig-btn{padding:10px}}
+</style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2F9J0SZSM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-K2F9J0SZSM');
+</script>
+</head>
+<body>
+
+<div class="notice">As an Amazon Associate we earn from qualifying purchases. Buttons below open the product on Amazon.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand" aria-label="A to Z Toys home">
+      <img src="images/logo.png" alt="A to Z Toys logo" width="402" height="596">
+    </a>
+    <a class="ig-btn" href="https://www.instagram.com/atoztoysforchild" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      <span>Follow @atoztoysforchild</span>
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Skip the search. Find the best toys on Amazon.</h1>
+    <p>Top-reviewed, safe and creative picks for all ages. The ultimate gift guide, one tap from Instagram to Amazon.</p>
+    <div class="pills">
+      <span class="pill">⭐ Top-reviewed</span>
+      <span class="pill">🛡️ Safe &amp; creative</span>
+      <span class="pill">🎁 Gift-ready ideas</span>
+      <span class="pill">👶 All ages</span>
+    </div>
+    <nav class="chips" aria-label="Shop by age">
+      <span class="chips-label">Shop by age</span>
+      <a class="chip alt" href="#latest">✨ Latest finds</a>
+      <a class="chip" href="#age-0-6">0–6 months</a>
+      <a class="chip" href="#age-6-12">6–12 months</a>
+      <a class="chip" href="#age-12-24">12–24 months</a>
+      <a class="chip" href="#age-24-plus">2 years &amp; above</a>
+      <a class="chip alt" href="#misc">🏠 Miscellaneous</a>
+    </nav>
+    <p class="disclosure-top">Prices, availability and age guidance change on Amazon, so always check the listing before you buy.</p>
+  </div>
+</section>
+
+<main class="wrap" id="toys">
+  <div id="sections"></div>
+
+  <div class="more" style="margin-top:34px">
+    <h3>New toys land on Instagram first 🧸</h3>
+    <p>Follow along so you never miss a find.</p>
+    <a class="ig-btn" href="https://www.instagram.com/atoztoysforchild" target="_blank" rel="noopener">Follow on Instagram</a>
+  </div>
+
+  <div class="why">
+    <div><h4>Handpicked</h4><p>We look for well-reviewed toys so you don't have to scroll through endless listings.</p></div>
+    <div><h4>Safe &amp; creative</h4><p>Toys that encourage curiosity, sensory exploration and imaginative play.</p></div>
+    <div><h4>Straight to Amazon</h4><p>Every button takes you directly to the product page to check details and buy.</p></div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand-name">AtoZ Toys</span>
+    <p>Questions or toy requests? Send us a message on <a class="ig" href="https://www.instagram.com/atoztoysforchild" target="_blank" rel="noopener">Instagram @atoztoysforchild</a>.</p>
+    <p><strong>Amazon Associate Disclosure:</strong> A to Z Toys is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate we earn from qualifying purchases.</p>
+    <p>Always check the Amazon listing for age recommendations, safety warnings and supervision guidance. All product names and trademarks belong to their respective owners.</p>
+    <p>This site uses Google Analytics to count visits and clicks so we can see which toys people like.</p>
+    <p>© 2026 A to Z Toys</p>
+  </div>
+</footer>
+
+<script>
+/* ============ ADD OR EDIT TOYS HERE ============
+   Each section has a list of toys (newest first). Copy a toy block to add a product.
+   - image: file inside the /images folder
+   - url:   your Amazon affiliate link for that toy
+   A section with an empty toys list automatically shows "More toys coming soon".   */
+const sections = [
+  {
+    id: "latest", title: "Latest finds", subtitle: "Our newest picks, fresh from Instagram.", badge: "✨",
+    toys: [
+      { name: "2-in-1 Baby Play Gym & Push Walker with Piano", category: "Play gyms", tag: "New",
+        image: "images/toy-25-baby-play-gym-walker.jpg",
+        alt: "Baby play gym with kick piano, hanging toys and mirror that converts into a push walker",
+        desc: "A baby play gym with a kick piano, a mirror and hanging toys for floor play that also turns into a push walker with an activity panel.",
+        features: ["Kick piano", "Hanging toys", "Gym-to-walker"],
+        url: "https://link.amazon/B06mdcRuv" },
+      { name: "Fisher-Price Pop-Up Animal Friends Toy", category: "Cause & effect", tag: "New",
+        image: "images/toy-29-fp-popup-critters.jpg",
+        alt: "Fisher-Price tree-stump toy with four animal friends and mushroom, leaf, flower and butterfly pieces",
+        desc: "A tree-stump toy with four animal friends peeking out of colorful doors, plus mushroom, leaf, flower and butterfly pieces to explore.",
+        features: ["4 animal friends", "Fisher-Price", "Press & discover"],
+        url: "https://link.amazon/B08Pu0h5Z" },
+      { name: "Wooden Carrot Harvest & Animal Sorting Box", category: "Wooden toys", tag: "New",
+        image: "images/toy-32-wooden-carrot-box.jpg",
+        alt: "Wooden pull-along sorting box with pull-out felt-topped vegetables, animal shapes and a play mat",
+        desc: "A wooden box on wheels with felt-topped vegetables to pull out of the garden and animal shapes to post through the sides, plus a play mat.",
+        features: ["Pull-out veggies", "Animal shapes", "Wheels & play mat"],
+        url: "https://link.amazon/B06eRb825" },
+      { name: "Play-Act Match 'n Roll Farm Number Train", category: "Counting & trains", tag: "New",
+        image: "images/toy-35-farm-number-train.jpg",
+        alt: "Play-Act farm number train with numbered barn cars, farm animals, a farmer and finger puppets",
+        desc: "A colorful train of numbered barn cars from 1 to 9 with farm animal toppers, a farmer and animals that double as finger puppets.",
+        features: ["Numbers 1–9", "Farm animals", "Finger puppets"],
+        url: "https://link.amazon/B0ihioNsT" }
+    ]
+  },
+  {
+    id: "age-0-6", title: "0–6 months", subtitle: "Gentle sensory play for brand-new explorers.", badge: "👶",
+    toys: [
+      { name: "Black & White Fold-Out Baby Book with Mirror", category: "Tummy time",
+        image: "images/toy-06-black-white-baby-book.jpg",
+        alt: "Fold-out black and white high-contrast baby book with a mirror panel",
+        desc: "A fold-out book of bold black-and-white and red patterns with a mirror panel, made to stand up for tummy time and catch tiny eyes.",
+        features: ["High-contrast", "Mirror panel", "Tummy time"],
+        url: "https://link.amazon/B0aH1b4DS" },
+      { name: "Musical Sensory Caterpillar Plush", category: "Soft toys",
+        image: "images/toy-07-caterpillar-plush.jpg",
+        alt: "Green caterpillar plush with colorful textured segments, a mirror and a teether ring",
+        desc: "A long, cuddly caterpillar built from bright patterned and textured segments, with a little mirror, a teether ring and dangling legs to grab.",
+        features: ["Mixed textures", "Mirror", "Teether ring"],
+        url: "https://link.amazon/B0e5GL7Ye" },
+      { name: "Infinno Baby Wrist Rattle & Foot Finder Sock Set", category: "Wearable play",
+        image: "images/toy-05-wrist-foot-bug-set.jpg",
+        alt: "Set of four soft bug-themed wrist straps and striped foot socks on a baby",
+        desc: "A four-piece set of soft ladybug, bee, butterfly and caterpillar wrist straps and striped foot socks that turn every kick and wave into play.",
+        features: ["4-piece set", "Wrists & feet", "Bold stripes"],
+        url: "https://link.amazon/B0iIdZbRw" },
+      { name: "Baby's First High Contrast Books Box Set", category: "Black & white books",
+        image: "images/toy-15-high-contrast-books-box.jpg",
+        alt: "Black and white Baby's First High Contrast Books box set with five books",
+        desc: "A boxed set of five black-and-white books on 1-2-3, shapes, animals, toys and bedtime, with bold high-contrast pictures for tiny eyes.",
+        features: ["5 books", "Black & white", "Boxed set"],
+        url: "https://link.amazon/B07A9nrO9" },
+      { name: "Duck Waterfall Suction Bath Toy", category: "Bath time",
+        image: "images/toy-20-bath-duck-waterfall.jpg",
+        alt: "Wall-mounted bath toy with a yellow duck spout, water cups and a crocodile trough",
+        desc: "A wall-mounted bath toy where water pours from a duck's beak and tumbles through cups and a crocodile trough for splashy tub-time fun.",
+        features: ["Suction mount", "Pouring water", "Bath play"],
+        url: "https://link.amazon/B0ihY4mGK" },
+      { name: "Silicone Suction Bead Maze with Wooden Rings", category: "Sensory & fine motor",
+        image: "images/toy-21-silicone-bead-maze.jpg",
+        alt: "Blue silicone arches with suction bases and natural wooden rings on a high chair tray",
+        desc: "Soft blue silicone arches with suction bases and smooth wooden rings to slide along, made to stick to a high chair tray or table.",
+        features: ["Suction bases", "Wooden rings", "Soft silicone"],
+        url: "https://link.amazon/B0h1w5G0g" },
+      { name: "VTech Smart Sounds Baby Keys", category: "Rattles & teethers",
+        image: "images/toy-22-vtech-baby-keys.jpg",
+        alt: "VTech Smart Sounds Baby Keys with a light-up fob, car key with mirror, bear teether and house rattle",
+        desc: "A bright set of baby keys with a light-up fob and three buttons, plus a car key with a mirror, a bear teether key and a house key with rattle beads.",
+        features: ["Light-up fob", "Teether key", "Rattle & mirror"],
+        url: "https://link.amazon/B06gBwgMS" },
+      { name: "Dancing & Talking Cactus Plush Toy", category: "Plush & music",
+        image: "images/toy-23-dancing-cactus.jpg",
+        alt: "Glowing green plush cactus in an orange pot with a USB charging cable",
+        desc: "A glowing plush cactus in a cozy pot that repeats, sings and records, charged with the USB cable that comes in the box.",
+        features: ["Repeats & sings", "Glows", "USB charging"],
+        url: "https://link.amazon/B0dzJwabv" },
+      { name: "Star, Ocean & Dino Night Light Projector with Remote", category: "Night lights",
+        image: "images/toy-24-star-projector.jpg",
+        alt: "Dome night light projecting colorful stars, ocean animals and dinosaurs with a remote",
+        desc: "A dome night light that lights up the room with colorful stars and moon, ocean animals or dinosaurs, with a remote control and timer buttons.",
+        features: ["3 scenes", "Remote control", "Timer"],
+        url: "https://link.amazon/B0h38xy6L" },
+      { name: "2-in-1 Baby Play Gym & Push Walker with Piano", category: "Play gyms",
+        image: "images/toy-25-baby-play-gym-walker.jpg",
+        alt: "Baby play gym with kick piano, hanging toys and mirror that converts into a push walker",
+        desc: "A baby play gym with a kick piano, a mirror and hanging toys for floor play that also turns into a push walker with an activity panel.",
+        features: ["Kick piano", "Hanging toys", "Gym-to-walker"],
+        url: "https://link.amazon/B06mdcRuv" }
+    ]
+  },
+  {
+    id: "age-6-12", title: "6–12 months", subtitle: "Grabbing, sorting and discovering new textures.", badge: "🧸",
+    toys: [
+      { name: "Fisher-Price Shape-Sorting Bucket with Blocks", category: "Shape sorting",
+        image: "images/toy-08-shape-sorting-bucket.jpg",
+        alt: "Fisher-Price bucket with colorful shape-sorting blocks and a carry handle",
+        desc: "A carry-along bucket with a shape-sorting lid and colorful blocks to drop in, dump out and stack, again and again.",
+        features: ["Shape sorting", "Carry handle", "Stackable blocks"],
+        url: "https://link.amazon/B0dnsDWrp" },
+      { name: "Jungly Tails Soft Cloth Book", category: "Soft books",
+        image: "images/toy-09-jungly-tails-cloth-book.jpg",
+        alt: "Hahaland Jungly Tails soft cloth book with jungle animals and fuzzy tails",
+        desc: "A soft fabric book of jungle animals, each page with its own fuzzy, crinkly or ribbon-like tail to touch and tug as you name the animals together.",
+        features: ["Soft fabric", "Animal tails", "Animal names"],
+        url: "https://link.amazon/B08rYwfvK" },
+      { name: "Foldable Tummy Time Mirror & Soft Book", category: "Tummy time",
+        image: "images/toy-10-tummy-time-mirror-book.jpg",
+        alt: "Foldable tummy time mirror and soft book with teethers and high-contrast pages",
+        desc: "A fold-out soft book with a large baby-safe mirror, high-contrast and colorful picture pages, and banana and strawberry teether shapes.",
+        features: ["Large mirror", "Picture pages", "Teether shapes"],
+        url: "https://link.amazon/B02Q4vKXI" },
+      { name: "Moonkie Soft Stacking Toy Set for Babies (7 Pieces)", category: "Baby & stacking",
+        image: "images/toy-04-silicone-stacking-rings.jpg",
+        alt: "Stack of soft muted-color silicone rings with a sun-shaped teether on top",
+        desc: "Soft silicone rings in calm, muted colors with different shapes and textures to stack, grab and explore, topped with a sun-shaped ring.",
+        features: ["Soft silicone", "Stacking play", "Calm colors"],
+        url: "https://link.amazon/B01HQijb0" },
+      { name: "Plush Farm Barn Set with Animals", category: "Plush & pretend",
+        image: "images/toy-03-plush-farm-barn-set.jpg",
+        alt: "Red and blue plush barn with a mirror and soft farm animals",
+        desc: "A cuddly plush barn with a carry handle, a mirror, numbers 1–10 and a team of soft farm animals to tuck in, hide and find.",
+        features: ["Carry handle", "Mirror & numbers", "Soft animals"],
+        url: "https://link.amazon/B09Eyim9v" },
+      { name: "Dr.Rapeti Soft Cloth Baby Books Set (6 Books)", category: "Soft books",
+        image: "images/toy-14-soft-cloth-books-set.jpg",
+        alt: "Set of six colorful soft cloth baby books with ribbon loops on the spines",
+        desc: "Six bright, soft fabric books covering transportation, animals, numbers, marine animals, vegetables and fruits, each with a ribbon loop for grabbing or hanging.",
+        features: ["6 books", "Soft fabric", "Ribbon loops"],
+        url: "https://link.amazon/B03quN3AB" },
+      { name: "hahaland Soft Baby Book with Mirror & Teether", category: "Soft books",
+        image: "images/toy-17-hahaland-soft-book.jpg",
+        alt: "hahaland soft cloth baby book with a bunny cover, mirror, teether and fabric flaps",
+        desc: "A soft cloth book of woodland animals with a fuzzy bunny ear, a little mirror, ribbon tags, a mushroom teether and fabric flaps to lift and feel.",
+        features: ["Mirror", "Teether", "Touch & feel"],
+        url: "https://link.amazon/B0cW8PWD8" },
+      { name: "Baby TV Remote Toy with Lights & Sounds", category: "Pretend play",
+        image: "images/toy-26-baby-tv-remote.jpg",
+        alt: "Black baby TV remote toy with colorful buttons next to its box",
+        desc: "A pretend TV remote with big numbered buttons that light up and play sounds, with English, Spanish and French language buttons.",
+        features: ["Light-up buttons", "3 languages", "Numbers"],
+        url: "https://link.amazon/B0hkZd6oO" },
+      { name: "6-in-1 Montessori Toy Set for Babies", category: "Toy sets",
+        image: "images/toy-27-6in1-montessori-set.jpg",
+        alt: "Six-in-one baby toy set with a pull-string toy, stacking cups, soft blocks, sorting cube, tissue box book and suction spinner",
+        desc: "Six toys in one box: a pull-string toy, stacking cups, soft number blocks, a sorting cube, a tissue box book and a suction spinner.",
+        features: ["6 toys", "Stacking cups", "Soft blocks"],
+        url: "https://link.amazon/B0hwQCaja" },
+      { name: "Silicone Pull-String Sensory Toy", category: "Sensory",
+        image: "images/toy-28-pull-string-sensory.jpg",
+        alt: "Colorful silicone pull-string toy with pop bubbles, a textured pad and spinning rings",
+        desc: "A colorful silicone toy with pull strings, pop bubbles, a textured pad and spinning rings for little fingers to pull, press and twist.",
+        features: ["Pull strings", "Pop bubbles", "Textured pad"],
+        url: "https://link.amazon/B0cEBF7qJ" },
+      { name: "Fisher-Price Pop-Up Animal Friends Toy", category: "Cause & effect",
+        image: "images/toy-29-fp-popup-critters.jpg",
+        alt: "Fisher-Price tree-stump toy with four animal friends and mushroom, leaf, flower and butterfly pieces",
+        desc: "A tree-stump toy with four animal friends peeking out of colorful doors, plus mushroom, leaf, flower and butterfly pieces to explore.",
+        features: ["4 animal friends", "Fisher-Price", "Press & discover"],
+        url: "https://link.amazon/B08Pu0h5Z" }
+    ]
+  },
+  {
+    id: "age-12-24", title: "12–24 months", subtitle: "Toddler toys for first steps and first stories.", badge: "🚶",
+    toys: [
+      { name: "Montessori Busy Cube Travel Toy for Toddlers", category: "Sensory",
+        image: "images/toy-01-sensory-cube.jpg",
+        alt: "White and cream sensory activity cube with spinner, mirror, sliders, dial and buttons",
+        desc: "A soft-edged activity cube with something to do on every side: a spinner, mirror, sliders, buttons, a turning dial and little latches for curious hands.",
+        features: ["Spinner & dial", "Mirror", "Sliders & buttons"],
+        url: "https://link.amazon/B0hq0DdKj" },
+      { name: "Light-Up Farm Wooden Busy Board", category: "Busy boards",
+        image: "images/toy-02-light-up-farm-busy-board.jpg",
+        alt: "Wooden farm-themed busy board with colorful LED lights, switches, knobs and a key",
+        desc: "A wooden farm-themed board packed with colorful LED lights, switches, knobs and a key to turn, ideal for little ones who love flipping and twisting everything.",
+        features: ["LED lights", "Switches & knobs", "Farm theme"],
+        url: "https://link.amazon/B0c5s4CPn" },
+      { name: "Montessori Busy Book for Toddlers", category: "Busy books",
+        image: "images/toy-18-montessori-busy-book.jpg",
+        alt: "Navy and orange felt Montessori busy book with handles, buckles, buttons, zippers and animal and vehicle stickers",
+        desc: "A carry-along felt busy book with pages of buckles, buttons, zippers, laces and shapes, plus colors, body and senses, a clock, farm animals and vehicles to explore.",
+        features: ["Buckles & zippers", "Carry handles", "Learning pages"],
+        url: "https://link.amazon/B04ZNWDCp" },
+      { name: "Ms. Rachel Speak & Sing Plush Doll", category: "Plush & dolls",
+        image: "images/toy-19-ms-rachel-doll.jpg",
+        alt: "Ms. Rachel Speak and Sing plush doll in blue overalls and a pink headband with music and speech buttons on its hands",
+        desc: "A soft Ms. Rachel doll in blue overalls, a pink headband and pink sneakers, with a music-note button and a speech button on its hands for songs and phrases.",
+        features: ["Soft plush", "Music & speech buttons", "Ms. Rachel"],
+        url: "https://link.amazon/B039Eebjj" },
+      { name: "The Very Hungry Caterpillar by Eric Carle", category: "Story books",
+        image: "images/toy-16-very-hungry-caterpillar.jpg",
+        alt: "Cover of The Very Hungry Caterpillar by Eric Carle showing the green caterpillar",
+        desc: "The much-loved story of a caterpillar who eats his way through the week, told with Eric Carle's bold, colorful collage artwork.",
+        features: ["Classic story", "Collage art", "Read-aloud"],
+        url: "https://link.amazon/B03ZZQAxr" },
+      { name: "LeapFrog Learning Friends 100 Words Book", category: "Learning toys",
+        image: "images/toy-30-leapfrog-100-words.jpg",
+        alt: "LeapFrog Learning Friends 100 Words Book in English and French with a green carry handle",
+        desc: "A talking learning book with 100 first words and friendly animal characters, with an English and French switch and a carry handle.",
+        features: ["100 words", "English & French", "Carry handle"],
+        url: "https://link.amazon/B0ekWo0GK" },
+      { name: "Elastic Band Shape Sorting Cube", category: "Shape sorting",
+        image: "images/toy-31-elastic-sorting-cube.jpg",
+        alt: "White cube frame with colorful stretchy bands and squishy shapes in different textures",
+        desc: "A cube frame with colorful stretchy bands to push squishy shapes through, with different textures and shapes to squeeze and sort.",
+        features: ["Stretchy bands", "Squishy shapes", "Mixed textures"],
+        url: "https://link.amazon/B037XJGXf" },
+      { name: "Wooden Carrot Harvest & Animal Sorting Box", category: "Wooden toys",
+        image: "images/toy-32-wooden-carrot-box.jpg",
+        alt: "Wooden pull-along sorting box with pull-out felt-topped vegetables, animal shapes and a play mat",
+        desc: "A wooden box on wheels with felt-topped vegetables to pull out of the garden and animal shapes to post through the sides, plus a play mat.",
+        features: ["Pull-out veggies", "Animal shapes", "Wheels & play mat"],
+        url: "https://link.amazon/B06eRb825" }
+    ]
+  },
+  {
+    id: "age-24-plus", title: "2 years & above", subtitle: "Bigger imagination, bigger play.", badge: "🎨",
+    toys: [
+      { name: "Magnetic Drawing Table for Toddlers", category: "Drawing",
+        image: "images/toy-33-magnetic-drawing-table.jpg",
+        alt: "Blue magnetic drawing table with orange legs, a magnetic pen and a slide eraser",
+        desc: "A blue magnetic drawing board on sturdy legs with a magnetic pen on a cord and a slide eraser to wipe the picture clean and start again.",
+        features: ["Magnetic pen", "Slide eraser", "Built-in legs"],
+        url: "https://link.amazon/B03kXMydF" },
+      { name: "Montessori Busy Book with Animal & Vehicle Pieces", category: "Busy books",
+        image: "images/toy-18-montessori-busy-book.jpg",
+        alt: "Navy and orange felt Montessori busy book with handles, buckles, buttons, zippers and animal and vehicle pieces",
+        desc: "A carry-along felt busy book with buckles, buttons, zippers and laces, plus colors, shapes, a clock and farm animal and vehicle pieces to match.",
+        features: ["Buckles & zippers", "Animal & vehicle pieces", "Carry handles"],
+        url: "https://link.amazon/B0aYNas7m" },
+      { name: "LeapFrog 2-in-1 LeapTop Touch", category: "Learning toys",
+        image: "images/toy-34-leaptop-touch.jpg",
+        alt: "LeapFrog 2-in-1 LeapTop Touch toy laptop with a screen, letter keys and a carry handle",
+        desc: "A toy laptop with a screen, ABC and number keys and buttons for messages, games and music, with a handle for carrying it along.",
+        features: ["ABC & 123", "Games & music", "Carry handle"],
+        url: "https://link.amazon/B0fxcpv0B" },
+      { name: "Play-Act Match 'n Roll Farm Number Train", category: "Counting & trains",
+        image: "images/toy-35-farm-number-train.jpg",
+        alt: "Play-Act farm number train with numbered barn cars, farm animals, a farmer and finger puppets",
+        desc: "A colorful train of numbered barn cars from 1 to 9 with farm animal toppers, a farmer and animals that double as finger puppets.",
+        features: ["Numbers 1–9", "Farm animals", "Finger puppets"],
+        url: "https://link.amazon/B0ihioNsT" },
+      { name: "Animal Piano Music Mat for Kids", category: "Music",
+        image: "images/toy-36-animal-piano-mat.jpg",
+        alt: "Floor piano music mat with animal keys, record, play back and demo buttons",
+        desc: "A floor piano mat with animal characters on the keys and buttons for record, play back and demo, so little feet can dance out a tune.",
+        features: ["Piano keys", "Record & play back", "Animal themes"],
+        url: "https://link.amazon/B06ZnbVUb" },
+      { name: "LCD Writing & Drawing Tablet for Kids", category: "Drawing",
+        image: "images/toy-37-lcd-writing-tablet.jpg",
+        alt: "Blue LCD writing tablet with a colorful elephant drawing and a stylus on a cord",
+        desc: "A colorful LCD tablet with a stylus on a cord for doodling and writing, with an erase button to clear the screen and start fresh.",
+        features: ["Colorful screen", "Stylus on cord", "Erase button"],
+        url: "https://link.amazon/B0arp3T6F" }
+    ]
+  },
+  {
+    id: "misc", title: "Miscellaneous", subtitle: "Handy finds for kids' rooms, books and play spaces.", badge: "🏠",
+    toys: [
+      { name: "Wooden Kids Bookshelf with Front-Facing Display", category: "Kids' room",
+        image: "images/toy-11-wooden-book-rack.jpg",
+        alt: "Tiered wooden children's bookshelf displaying colorful picture books face-out",
+        desc: "A tiered wooden bookshelf that shows the covers face-out, so little readers can spot and pick their favorite books on their own.",
+        features: ["Wood frame", "Face-out display", "5 tiers"],
+        url: "https://link.amazon/B07IWhJ0f" },
+      { name: "Kids Bookshelf with Toy Storage Bins", category: "Storage",
+        image: "images/toy-12-kids-bookshelf-storage.jpg",
+        alt: "White kids bookshelf with front-facing book shelves, fabric pockets and pull-out storage bins",
+        desc: "A white bookshelf with face-out book shelves, fabric pockets for crayons and markers, pull-out bins and an open shelf for toys, all in one tidy corner.",
+        features: ["Book shelves", "Storage bins", "Open toy shelf"],
+        url: "https://link.amazon/B02eAudJP" },
+      { name: "White Cloud-Edge Wall Shelves for Kids' Rooms", category: "Wall decor",
+        image: "images/toy-13-cloud-wall-shelves.jpg",
+        alt: "Set of white wall-mounted shelves with scalloped cloud edges holding books and toys",
+        desc: "Wall-mounted white shelves with a scalloped cloud edge that keeps picture books and favorite toys on display and off the floor.",
+        features: ["Wall-mounted", "Cloud edge", "Books & toys"],
+        url: "https://link.amazon/B03V0m2PR" }
+    ]
+  }
+];
+
+const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const card = t => `
+  <article class="card">
+    <div class="photo">
+      ${t.tag ? `<span class="tag">${esc(t.tag)}</span>` : ''}
+      <img src="${esc(t.image)}" alt="${esc(t.alt)}" loading="lazy">
+    </div>
+    <div class="body">
+      <span class="cat">${esc(t.category)}</span>
+      <h3>${esc(t.name)}</h3>
+      <p>${esc(t.desc)}</p>
+      <ul class="feats">${t.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul>
+      <a class="buy" href="${esc(t.url)}" data-toy="${esc(t.name)}" data-cat="${esc(t.category)}" target="_blank" rel="noopener noreferrer sponsored">View on Amazon ${arrow}</a>
+    </div>
+  </article>`;
+
+const soon = `
+  <div class="soon">
+    <h3>More toys coming soon 🧸</h3>
+    <p>We're still hunting for the best picks here. Follow us on Instagram to see them first.</p>
+    <a class="ig-btn" href="https://www.instagram.com/atoztoysforchild" target="_blank" rel="noopener">Follow @atoztoysforchild</a>
+  </div>`;
+
+document.getElementById('sections').innerHTML = sections.map((sec, i) => `
+  ${i > 0 ? '<div class="divider"></div>' : ''}
+  <section class="cat-sec" id="${esc(sec.id)}">
+    <div class="section-title">
+      <div>
+        <h2><span class="age-badge">${sec.badge}</span>${esc(sec.title)}</h2>
+        <p>${esc(sec.subtitle)}</p>
+      </div>
+      <div class="title-right">
+        <span class="count">${sec.toys.length ? sec.toys.length + (sec.toys.length === 1 ? ' toy' : ' items') : 'Coming soon'}</span>
+        ${sec.toys.length ? '<div class="arrows" hidden><button class="arrow prev" aria-label="Previous items">&#8249;</button><button class="arrow next" aria-label="Next items">&#8250;</button></div>' : ''}
+      </div>
+    </div>
+    ${sec.toys.length
+      ? `<div class="track" tabindex="0" aria-label="${esc(sec.title)} toys, scroll sideways for more">${sec.toys.map(card).join('')}</div>`
+      : `<div class="grid">${soon}</div>`}
+  </section>`).join('');
+
+/* sliders: arrows appear only when a section has more items than fit on screen */
+document.querySelectorAll('.cat-sec').forEach(sec => {
+  const track = sec.querySelector('.track');
+  if (!track) return;
+  const box = sec.querySelector('.arrows'), prev = sec.querySelector('.prev'), next = sec.querySelector('.next');
+  const stepSize = () => {
+    const c = track.querySelector('.card'); const w = c ? c.getBoundingClientRect().width + 22 : 300;
+    return w * Math.max(1, Math.floor(track.clientWidth / w));
+  };
+  const update = () => {
+    const max = track.scrollWidth - track.clientWidth;
+    box.hidden = max <= 4;
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max - 2;
+  };
+  prev.addEventListener('click', () => track.scrollBy({ left: -stepSize(), behavior: 'smooth' }));
+  next.addEventListener('click', () => track.scrollBy({ left: stepSize(), behavior: 'smooth' }));
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+});
+</script>
+<script>
+/* Click tracking for Google Analytics: which toy's Amazon button was tapped, and which section it was in */
+document.addEventListener('click', function (e) {
+  if (typeof gtag !== 'function') return;
+  var buy = e.target.closest('a.buy');
+  if (buy) {
+    var sec = buy.closest('.cat-sec');
+    gtag('event', 'amazon_click', {
+      toy_name: buy.getAttribute('data-toy'),
+      toy_category: buy.getAttribute('data-cat'),
+      section: sec ? sec.id : '',
+      link_url: buy.href,
+      transport_type: 'beacon'
+    });
+    return;
+  }
+  var ig = e.target.closest('a[href*="instagram.com"]');
+  if (ig) gtag('event', 'instagram_click', { transport_type: 'beacon' });
+});
+</script>
+</body>
+</html>
